@@ -9,3 +9,6 @@ sbfl/ochiai/*
 sbfl/spectra/*
 sbfl/data/
 statistic/
+.idea/
+*.iml
+target/
