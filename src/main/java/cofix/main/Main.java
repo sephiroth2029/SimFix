@@ -50,6 +50,8 @@ public class Main {
 		System.out.println(Constant.PROJECT_HOME);
 		
 		flexibelConfigure(options.getFirst(), options.getSecond(), projInfo);
+
+		System.out.println("Failed compilations: " + Repair.invalidCodeCounter);
 	}
 	
 	private static void trySplitFix(Subject subject, boolean purify) throws IOException{

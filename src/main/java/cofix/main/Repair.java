@@ -55,6 +55,7 @@ import cofix.core.parser.search.SimpleFilter;
  */
 public class Repair {
 
+	public static int invalidCodeCounter = 0;
 	private AbstractFaultlocalization _localization = null;
 	private Subject _subject = null;
 	private List<String> _failedTestCases = null;
@@ -250,6 +251,7 @@ public class Repair {
 							switch (validate(logFile, oneBuggyBlock)) {
 							case COMPILE_FAILED:
 //								haveTryPatches.remove(replace);
+								invalidCodeCounter++;
 								break;
 							case SUCCESS:
 								String correctPatch = oneBuggyBlock.toSrcString().toString().replace("\\s*|\t|\r|\n", "");
