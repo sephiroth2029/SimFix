@@ -56,6 +56,7 @@ import cofix.core.parser.search.SimpleFilter;
 public class Repair {
 
 	public static int invalidCodeCounter = 0;
+	public static int allCounter = 0;
 	private AbstractFaultlocalization _localization = null;
 	private Subject _subject = null;
 	private List<String> _failedTestCases = null;
@@ -248,6 +249,7 @@ public class Repair {
 							}
 							
 							// validate correctness of patch
+							allCounter++;
 							switch (validate(logFile, oneBuggyBlock)) {
 							case COMPILE_FAILED:
 //								haveTryPatches.remove(replace);
